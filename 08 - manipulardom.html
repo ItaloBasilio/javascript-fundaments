@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular dom</title>
+</head>
+
+<style>
+    #sucessMsg {
+        color: green;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+
+    function cadastroCliente() {
+
+        let nome = document.getElementById("name").value
+        let email = document.getElementById("email").value
+
+        // Criar um novo item de lista
+        let novoItemLista = document.createElement('li');
+        novoItemLista.textContent = `Nome: ${nome}, Email: ${email}`;
+
+        // Adicionar o novo item de lista à lista de clientes
+        document.getElementById('listaClientes').appendChild(novoItemLista);
+
+        // Limpar os campos de entrada após o cadastro
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+
+        // Exibir mensagem de sucesso
+        let sucessMsg = document.getElementById('sucessMsg');
+        sucessMsg.innerHTML = "Cliente cadastrado com sucesso!";
+    }
+
+
+</script>
+
+<body>
+    <h1>Cadastro Cliente</h1>
+
+    <label for="name">Nome</label>
+    <input type="text" name="name" id="name"><br><br>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"><br><br>
+
+    <button onclick="cadastroCliente()">Cadastrar Cliente</button>
+    <p id="sucessMsg"></p>
+
+    <h2>Clientes Cadastrados:</h2>
+    <ul id="listaClientes"></ul>
+
+</body>
+
+</html>

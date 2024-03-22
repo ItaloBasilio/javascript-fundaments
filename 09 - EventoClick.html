@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento de Clique</title>
+</head>
+<body>
+    <h1>Exemplo de Evento de Clique</h1>
+
+    <!-- Botão -->
+    <button id="meuBotao">Clique Aqui!</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        // Função a ser executada quando o botão for clicado
+        function acaoClique() {
+            document.getElementById("mensagem").textContent = "Botão clicado!";
+        }
+
+        // Adiciona um evento de clique ao botão
+        document.getElementById("meuBotao").addEventListener("click", acaoClique);
+    </script>
+</body>
+</html>
